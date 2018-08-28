@@ -1,0 +1,21 @@
+<% include partials/header %>
+    <div class="ui main text container segment showContainer">
+      <div class="ui huge header"> Edit <%=blog.title %></div>
+      <form class="ui form" action="/blogs/<%=blog._id%>?_method=PUT" method="POST">
+        <div class="field">
+          <label>Title</label>
+          <input required type="text" name="blog[title]"  value="<%=blog.title%>">
+          <!--Alternate way is to have a seperate route,have it as a post request, will work fine -->      </div>
+        <div class="field">
+          <label>Image</label>
+          <input required type="text" name="blog[image]"  value="<%=blog.image%>">
+        </div>
+        <div class="field">
+          <label>Body Content</label>
+          <textarea required name="blog[body]" placeholder="Content goes here"><%=blog.body%></textarea>
+        </div>
+        <!--<input type="submit">-->
+       <button class="ui brown  basic button" type="submit" >Submit</button>
+      </form>
+    </div>
+<% include partials/footer %>
